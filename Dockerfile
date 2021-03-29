@@ -14,6 +14,7 @@ RUN npm install -g @vue/cli
 # install project dependencies
 RUN npm install
 
+USER node
 
 EXPOSE 8080
 CMD [ "npm", "run", "serve" ]
