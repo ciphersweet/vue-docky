@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  vue-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: yuba/vue-app:v0.1
+    container_name: vue-app
+    restart: unless-stopped
+    tty: true
+    ports: 
+      - "8080:8080"
+    volumes: 
+      - ./app:/app
+
