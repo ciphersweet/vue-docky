@@ -44,7 +44,7 @@ $ docker-compose run --rm vue-cli <vue command>
 ```
 
 ### Vue Cli UI
-You can serve and access the Vue Cli ui via Docker using this command:
+You can serve and access the Vue Cli UI via Docker using this command:
 ```
 $ docker-compose run --rm -p 8000:8000 vue-cli ui --headless --port 8000 --host 0.0.0.0
 ```
