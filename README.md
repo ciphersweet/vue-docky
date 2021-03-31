@@ -13,7 +13,6 @@ Vue Docky
     │     └───...
     └─── Dockerfile
     └─── docker-compose.yml
-    └─── docker-compose.yml
     └─── README.md
 ```
 
