@@ -28,6 +28,12 @@ Vue App is the the docker-compose service that serves the application via an HTT
 
 Note that copying `package.json` and `package-lock.json` into the `/app` folder allows us to take advantage of the cached Docker layers.
 
+### Create a new Vue.js application
+Once the images build and the services started, you can create your Vue.js application using this command:
+```
+$ docker-compose run --rm vue-cli create ./
+```
+
 You should be able to access your Vue.js application on `localhost:8080`
 
 ## Vue Npm
