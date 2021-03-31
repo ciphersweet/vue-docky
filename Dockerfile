@@ -16,5 +16,5 @@ RUN npm install
 
 USER node
 
-EXPOSE 8080
+EXPOSE 8080 8000
 CMD [ "npm", "run", "serve" ]

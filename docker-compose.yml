@@ -12,4 +12,43 @@ services:
       - "8080:8080"
     volumes: 
       - ./app:/app
+    networks: 
+      - vue_network
+  
+  vue-npm:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: yuba/vue-npm:v0.1
+    container_name: vue-npm
+    depends_on:
+      - vue-app
+    tty: true
+    entrypoint: ['npm']
+    volumes: 
+      - ./app:/app
+    networks: 
+      - vue_network
+  
+  vue-cli:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: yuba/vue-cli:v0.1
+    container_name: vue-cli
+    ports: 
+      - "8000:8000"
+    depends_on:
+      - vue-app
+    tty: true
+    entrypoint: ['vue']
+    volumes: 
+      - ./app:/app
+    networks: 
+      - vue_network
 
+  
+
+networks: 
+  vue_network:
+    driver: bridge
