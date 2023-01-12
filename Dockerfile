@@ -6,6 +6,5 @@ COPY app/package*.json ./
 
 RUN npm install
 
-
 USER node
 
