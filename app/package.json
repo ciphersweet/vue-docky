@@ -1,44 +1,22 @@
 {
-  "name": "vue-app",
-  "version": "0.1.0",
+  "name": "package.json",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "core-js": "^3.27.1",
     "vue": "^3.2.45"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^5.0.8",
-    "@vue/cli-plugin-eslint": "^5.0.8",
-    "@vue/cli-service": "^5.0.8",
-    "@vue/compiler-sfc": "^3.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "vite": "^4.0.0"
   },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "plugin:vue/vue3-essential",
-      "eslint:recommended"
-    ],
-    "parserOptions": {
-      "parser": "babel-eslint"
-    },
-    "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ],
-  "_id": "vue-app@0.1.0",
-  "readme": "ERROR: No README data found!"
+  "description": "This template should help get you started developing with Vue 3 in Vite.",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

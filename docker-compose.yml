@@ -4,51 +4,13 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: yuba/vue-app:v0.1
-    container_name: vue-app
+    image: yuba/vue-app:v01
+    container_name: vitevue
+    working_dir: /var/www/html/app/
+    entrypoint: ["npm", "run", "dev"]
     restart: unless-stopped
     tty: true
-    ports: 
-      - "8080:8080"
-    volumes: 
-      - ./app:/app
-    networks: 
-      - vue_network
-  
-  vue-npm:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: yuba/vue-npm:v0.1
-    container_name: vue-npm
-    depends_on:
-      - vue-app
-    tty: true
-    entrypoint: ['npm']
-    volumes: 
-      - ./app:/app
-    networks: 
-      - vue_network
-  
-  vue-cli:
-    build:
-      context: ./
-      dockerfile: Dockerfile
-    image: yuba/vue-cli:v0.1
-    container_name: vue-cli
-    ports: 
+    ports:
       - "8000:8000"
-    depends_on:
-      - vue-app
-    tty: true
-    entrypoint: ['vue']
-    volumes: 
-      - ./app:/app
-    networks: 
-      - vue_network
-
-  
-
-networks: 
-  vue_network:
-    driver: bridge
+    volumes:
+      - ./app/:/var/www/html/app

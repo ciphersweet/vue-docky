@@ -1,20 +1,11 @@
-FROM node:lts-alpine
+from node:alpine3.16
 
-# install simple http server for serving static content
-RUN npm install -g http-server
+WORKDIR /var/www/html/app/
 
-# make the 'app' folder the current working directory
-WORKDIR /app
-
-# copy both 'package.json' and 'package-lock.json' (if available)
 COPY app/package*.json ./
 
-RUN npm install -g @vue/cli
-
-# install project dependencies
 RUN npm install
+
 
 USER node
 
-EXPOSE 8080 8000
-CMD [ "npm", "run", "serve" ]
